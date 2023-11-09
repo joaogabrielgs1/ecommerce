@@ -11,7 +11,6 @@ public class Pedido {
     }
 
     public void finalizarPedido() {
-        // Implemente aqui a lógica para finalizar o pedido, por exemplo, gerar um recibo.
         System.out.println("Pedido finalizado. Total: " + total);
     }
 }

@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Carinhodecompras {
+public class Carrinhodecompras {
     private Usuario usuario;
     private Map<Item, Integer> itens;
     private double total;
 
-    public Carinhodecomprass(Usuario usuario) {
+    public Carrinhodecompras(Usuario usuario) {
         this.usuario = usuario;
         this.itens = new HashMap<>();
         this.total = 0.0;
@@ -43,7 +43,7 @@ public class Carinhodecompras {
         for (Map.Entry<Item, Integer> entry : itens.entrySet()) {
             Item item = entry.getKey();
             int quantidade = entry.getValue();
-            System.out.println(item.getNome() + " - Quantidade: " + quantidade + " - Preço unitário: " + item.getPreco());
+            System.out.println(item.getNome() + " - Quantidade: " + quantidade + " - Preï¿½o unitï¿½rio: " + item.getPreco());
         }
         System.out.println("Total: " + total);
     }

@@ -4,7 +4,7 @@ package ifsuldeminas.Ecommerce;
 
 public class avaliacao {
     private String texto;
-    private int classificacao; // Pode ser um valor de 1 a 5, por exemplo
+    private int classificacao;
     private Usuario usuario;
     private Item produto;
 
@@ -16,7 +16,6 @@ public class avaliacao {
     }
 
     public void avaliar() {
-        // Implemente aqui a lógica para registrar a avaliação no sistema.
-        System.out.println("Avaliação registrada com sucesso.");
+        System.out.println("Avaliacao registrada com sucesso.");
     }
 }
