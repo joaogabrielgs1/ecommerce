@@ -3,10 +3,20 @@ package ifsuldeminas.Ecommerce;
 
 import java.util.HashMap;
 import java.util.Map;
+import jakarta.persistence.*;
 
-
+@Entity
 public class Estoque {
-      private Map<String, Integer> produtos;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @ElementCollection
+    @CollectionTable(name = "estoque_produtos", joinColumns = @JoinColumn(name = "estoque_id"))
+    @MapKeyColumn(name = "nome_produto")
+    @Column(name = "quantidade")
+    private Map<String, Integer> produtos;
 
     public Estoque() {
         produtos = new HashMap<>();

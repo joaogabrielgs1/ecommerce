@@ -1,14 +1,22 @@
 
 package ifsuldeminas.Ecommerce;
+import jakarta.persistence.*;
 
+@Entity
 public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long id;
+
     private String nome;
     private String email;
     private String senha;
     private String endereco;
 
     // Construtor
-    public Usuario(String nome, String email, String senha, String endereco) {
+    public Usuario(long id,String nome, String email, String senha, String endereco) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -19,12 +27,21 @@ public class Usuario {
         System.out.println("Usuario cadastrado com sucesso.");
     }
 
-    public void atualizarPerfil(String novoNome, String novoEmail, String novaSenha, String novoEndereco) {
+    public void atualizarPerfil(long novoId,String novoNome, String novoEmail, String novaSenha, String novoEndereco) {
+        this.id=novoId;
         this.nome = novoNome;
         this.email = novoEmail;
         this.senha = novaSenha;
         this.endereco = novoEndereco;
         System.out.println("Perfil atualizado com sucesso.");
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNome() {

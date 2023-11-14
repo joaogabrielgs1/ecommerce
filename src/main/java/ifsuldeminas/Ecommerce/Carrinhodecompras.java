@@ -3,11 +3,24 @@ package ifsuldeminas.Ecommerce;
 
 import java.util.HashMap;
 import java.util.Map;
+import jakarta.persistence.*;
 
-
+@Entity
 public class Carrinhodecompras {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @OneToOne
     private Usuario usuario;
+
+    @ElementCollection
+    @CollectionTable(name = "carrinho_itens", joinColumns = @JoinColumn(name = "carrinho_id"))
+    @MapKeyJoinColumn(name = "item_id")
+    @Column(name = "quantidade")
     private Map<Item, Integer> itens;
+
     private double total;
 
     public Carrinhodecompras(Usuario usuario) {
