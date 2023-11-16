@@ -12,15 +12,21 @@ public class Pedido {
     @OneToOne
     private Carrinhodecompras carrinho;
 
+    @ManyToOne
+    private Estoque estoque;
     private double total;
 
+    public String confirmaEstoque(){
+        return finalizarPedido();
+    }
     public Pedido(long id,Carrinhodecompras carrinho) {
         this.id=id;
         this.carrinho = carrinho;
         this.total = carrinho.getTotal();
     }
 
-    public void finalizarPedido() {
+    private String finalizarPedido() {
         System.out.println("Pedido finalizado. Total: " + total);
+        return null;
     }
 }

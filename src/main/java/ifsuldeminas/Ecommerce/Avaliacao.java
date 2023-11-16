@@ -2,7 +2,7 @@
 package ifsuldeminas.Ecommerce;
 import jakarta.persistence.*;
 @Entity
-public class avaliacao {
+public class Avaliacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class avaliacao {
     @ManyToOne
     private Item produto;
 
-    public avaliacao(String texto, int classificacao, Usuario usuario, Item produto) {
+    public Avaliacao(String texto, int classificacao, Usuario usuario, Item produto) {
         this.texto = texto;
         this.classificacao = classificacao;
         this.usuario = usuario;
