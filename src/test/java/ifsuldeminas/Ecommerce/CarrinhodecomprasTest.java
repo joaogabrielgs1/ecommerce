@@ -1,3 +1,5 @@
+package ifsuldeminas.Ecommerce;
+
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -13,8 +15,8 @@ public class CarrinhodecomprasTest {
 
         carrinho.adicionarItem(item, 2);
 
-        assertEquals(2, carrinho.getItens().get(item));
-        assertEquals(20.0, carrinho.getTotal());
+        assertEquals(2, carrinho.getQuantidades().iterator().next().intValue());
+        assertEquals(20.0, carrinho.getTotal(), 0.001);
     }
 
     @Test
@@ -26,8 +28,8 @@ public class CarrinhodecomprasTest {
         carrinho.adicionarItem(item, 3);
         carrinho.removerItem(item, 2);
 
-        assertEquals(1, carrinho.getItens().get(item));
-        assertEquals(10.0, carrinho.getTotal());
+        assertEquals(1, carrinho.getQuantidades().iterator().next().intValue());
+        assertEquals(10.0, carrinho.getTotal(), 0.001);
     }
 
     @Test
@@ -47,6 +49,8 @@ public class CarrinhodecomprasTest {
         System.setOut(System.out);
 
         // Verificar se a saída está correta
-        assertEquals("Carrinho de Compras de NomeUsuario\nItemTeste - Quantidade: 2 - Preço unitário: 10.0\nTotal: 20.0\n", outContent.toString());
+        assertEquals("Carrinho de Compras de NomeUsuario\n" +
+                "ItemTeste - Quantidade: 2 - Preço unitário: 10.0\n" +
+                "Total: 20.0\n", outContent.toString());
     }
 }

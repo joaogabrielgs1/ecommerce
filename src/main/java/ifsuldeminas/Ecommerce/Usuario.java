@@ -23,6 +23,11 @@ public class Usuario {
         this.endereco = endereco;
     }
 
+    public Usuario(String nome) {
+        this.nome = nome;
+
+    }
+
     public void cadastrar() {
         System.out.println("Usuario cadastrado com sucesso.");
     }

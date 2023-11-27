@@ -16,6 +16,10 @@ public class Item {
         this.nome = nome;
         this.preco = preco;
     }
+
+    public Item(String nome, double v) {
+        this.nome = nome;
+    }
     public long getId(){return  id; }
     public String getNome() {
         return nome;

@@ -1,6 +1,7 @@
 
 package ifsuldeminas.Ecommerce;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import jakarta.persistence.*;
@@ -63,5 +64,9 @@ public class Carrinhodecompras {
 
     public double getTotal() {
         return total;
+    }
+
+    public Collection<Integer> getQuantidades() {
+        return itens.values();
     }
 }
