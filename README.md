@@ -3,6 +3,10 @@
     <span> E-commerce </span>
 </h1>
 
+## Nota
+Devido ao um erro no ultimo commit o hisotrico de commit foi apagado mas nos perfis dos colaboradores tem o historico
+
+
 Repositório desenvolvido para o trabalho da faculdade da materia de Back-End do 6º período da Faculdade
 
 ## Objetivo
